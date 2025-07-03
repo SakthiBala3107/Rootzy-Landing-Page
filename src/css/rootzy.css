@@ -1,0 +1,104 @@
+@import url("https://fonts.cdnfonts.com/css/lagistha");
+@import "tailwindcss";
+
+:root {
+  --royal-jade: linear-gradient(#0c0d19, #236150, #1c9a6c);
+  --jade: #007f5f;
+  --soft-fern: #a8d5ba;
+  --deep-forest: #004b3a;
+  --earth-clay: #ede6db;
+  --dew-white: #f9fdf8;
+  --lavender-gray: #c4c3d0;
+  --charcoal-green: #1e3d34;
+  --font-lagistha: "Lagistha", sans-serif;
+  --font-negra: "Modern negra", sans-serif;
+  background-color: #236150;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  font-size: 50%; /* 50% of default 16px = 8px → 1rem = 8px */
+  width: 100%;
+  height: 1000vh;
+  color: var(--earth-clay);
+  background-image: var(--royal-jade);
+  font-family: var(--font-negra);
+  scroll-behavior: smooth;
+}
+
+@layer utility {
+  .lagistha {
+    font-family: var(--font-lagistha);
+  }
+}
+@layer utility {
+  .negra {
+    font-family: var(--font-negra);
+  }
+}
+
+/* entire nav-section */
+.nav-section {
+  width: 100%;
+  box-sizing: border-box;
+  height: 15rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  /* display: flex;
+  flex-direction: column; */
+  position: fixed;
+  border: 2px solid black;
+  /* glass effect */
+  background: transparent;
+  backdrop-filter: blur(20px);
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.3, rgba(0, 0, 0, 0.2))
+  );
+  background-size: 30px 30px;
+}
+
+/* actaul navbar */
+#navBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+.nav-link {
+    font-size: 3.5rem;
+    font-style: italic;
+    margin-right: 5%;
+    position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  height: 0.2rem;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left:0;
+  background-color: var(--earth-clay);
+  transition: width, 0.3s ease-in-out;
+}
+.nav-link:hover::after {
+  width: 12rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  font-style: italic;
+  font-size: 3rem;
+  /* margin: right 5%;  */
+}
+.logo-pic {
+  height: 5rem;
+  border-radius: 100%;
+}
